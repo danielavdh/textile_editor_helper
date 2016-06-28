@@ -1,0 +1,331 @@
+/* frontend styles, adapt for use in preview */
+$block_font: serif;
+$title_font: sans-serif;
+$link: #ffffff;
+$hover: #999999;
+@mixin title_font{
+font-family: $title_font;
+}
+@mixin block_font{
+font-family: $block_font;
+}
+.block_font{
+@include block_font
+}
+.title_font{
+@include title_font
+}
+
+/* backend styles */
+$backend_font: sans-serif;
+$backend_bkg: #484848;
+$backend_text: #ffffff;
+
+$backend_yellow: #ffff99;
+$backend_green: #00ff00;
+$backend_highlight: #99ff99;
+
+$backend_link: #ffff99;
+$backend_hover: #999999;
+
+$error: #ff6666;
+
+*{margin:0; border:none; padding:0;box-sizing:border-box;font-family:$backend_font;}
+ul,li{list-style-type:none;}
+
+a, a:link, a:visited, a:hover {color:$link; text-decoration: none;}
+a:hover{color:$hover;}
+
+code{
+font-family: "Comic Sans MS";
+color: #cc0000;
+}
+
+h1{
+color: lighten($backend_green, 30%);
+text-align: left;
+margin: 25px 0px;
+}
+
+body {
+position: relative;
+font-size: 1.5vw;
+color: $backend_text;
+background-color: $backend_bkg;
+	#page{
+	text-align: left;
+		a.backend_link{
+		color: $backend_link;
+			&:hover{
+			font-weight: 400;
+			color: $backend_hover;
+			}
+		}
+
+/********************************* EDIT/NEW *************************************/
+
+		#new_edit_view{
+		padding: 4vw 0 4vw 1vw;
+		margin-bottom: 6vw;
+
+/********************************* FORMS ***************************************/
+/********************** .new_{model}, .edit_{model} ****************************/
+
+			.new_admin, .edit_admin{
+			width: 40vw;
+				.field, .actions{
+				margin-top: 1vw;
+				}
+				.field{
+				position: relative;
+				width: 43vw;
+				padding: 1vw 0.5vw 2vw;
+				margin: 1vw 0;
+				background-color: lighten($backend_bkg, 7%);
+				border: 2px solid lighten($backend_bkg, 10%);
+					input, select{
+					margin-top: 0.3vw;
+					}
+					input, textarea{
+					font-size: 85%;
+					width: 41.5vw;
+					padding: 0.25vw 0.5vw;
+					}
+					textarea{
+					height: 5vw;
+					}
+					textarea#map_info{
+					height: 30vw;
+					}
+					input[type='radio']{
+					width: 0.8vw;
+					}
+					label{
+					font-size: 85%;
+					color: lighten($backend_green, 40%);
+					}
+					label.checkbox_label{
+					float: left;
+					}
+					span.right{
+					padding-right: 2vw;
+					float: right;
+					}
+					input[type="checkbox"]{
+					width: 2vw;
+					}
+					#radio_btn_priority{
+					text-align: right;
+					padding: 0.25vw 2vw 0 0;
+					}
+					label.existing_doc_filename{
+					color: $backend_highlight;
+					}
+					#positionHP_info{
+					font-size: 85%;
+					text-align: left;
+					margin-top: 1vw;
+					display: none;
+					}
+				}
+				.actions{
+				position: fixed;
+				left: 50vw;
+				bottom: 0px;
+				width: 60vw;
+				height: 4vw;
+				padding: 0.5vw 2vw 3.5vw;
+				background-color: darken($backend_bkg, 8%);
+				border-top: 2px solid lighten($backend_bkg, 10%);
+				z-index: 200;
+					input[type="submit"]{
+					font-size: 90%;
+					width: 20vw;
+					font-weight: bold;
+					background-color: $backend_yellow;
+					-moz-border-radius: 0.8vw 0.8vw 0vw 0vw / 0.8vw 0.8vw 0vw 0vw;
+					border-radius: 0.8vw 0.8vw 0vw 0vw;
+					padding: 0.7vw 0.5vw 0.9vw;
+					cursor: pointer;
+					}
+				}
+			}
+		}
+
+/********************************* INDEX *************************************/
+/********************************* .{model}_table *************************************/
+
+		.admin_table{
+		width: 98vw;
+		padding: 4vw 0 4vw 1vw;
+			table{
+			width: 100%;
+			margin: 2% 0%;
+			}
+			th{
+			background-color: lighten($backend_bkg, 7.5%);
+			}
+			td, th{
+			text-align: left;
+			font-size: 85%;
+			padding: 1vh 1vw;
+			}
+			th.sed, td.sed{
+			width: 1vw;
+			}
+			tr.list-line-odd{	
+			background-color: lighten($backend_bkg, 15%);
+			}
+			tr.list-line-even{
+			background-color: lighten($backend_bkg, 7.5%);
+			}
+		}
+
+/********************************* SHOW *************************************/
+/**************************** .show_{model} **********************************/
+
+		.show_admin{
+			td, th{
+			color: darken($backend_text, 15%);
+			}
+			th.firstCell, td.firstCell{
+			width: 30%;
+			color: $backend_text;
+			}
+		}
+
+/********************************* NAVIGATION *************************************/
+
+		.crud_navigation{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 4vw;
+		color: $backend_link;
+		padding: 1vw 2vw 3vw;
+		border-top: 2px solid lighten($backend_bkg, 10%);
+		background-color: darken($backend_bkg, 8%);
+			a{
+			margin: 0 0.5vw;
+			color: $backend_link;
+				&:hover{
+				color: $backend_hover;
+				}
+			}
+		}
+
+/********************************* SUPPORT *************************************/
+
+		/*#admin_communications{
+		padding-top: 5vh;
+			li{
+			padding: 1vh 0;
+			border-top: 1px solid #cccccc;
+			}
+			li:first-child{
+			border: none;
+			}
+		}*/
+		.info{
+		color: $backend_yellow;
+		}
+		.highlight{
+		color: $backend_green;
+		}
+		p.info{
+		margin-bottom: 30px;
+		}
+		#notice{
+		font-weight: 400;
+		color: $backend_yellow;
+		margin: 4vh 1vw 0;
+			span{
+			padding: 0.5vw 1vw;
+			background-color: lighten($backend_bkg, 10%);
+			}
+		}
+		#more_instructions, .more_instructions, .instructions{
+		color: $backend_yellow;
+		border: none;
+			h2{
+			padding: 20px 0px;
+			color: darken($backend_yellow, 30%);
+			}
+			h3{
+			font-size: 100%;
+			text-decoration: underline;
+			margin: 15px 0px;
+			}
+			p{
+			margin: 10px 0px;
+			}
+			span{
+			color: $backend_highlight;
+			}
+			span.link_instr{
+			color: $backend_yellow;
+			}
+			a{
+			color: $backend_yellow;
+			font-style: italic;
+				&:hover{
+				color: darken($backend_yellow, 30%);
+				}
+			}
+		}
+		#more_instructions{
+		position: absolute;
+		left: 500px;
+		top: 150px;
+		width: 500px;
+		padding-bottom: 70px;
+		}
+/*		div#textile_editor_help{
+		position: absolute;
+		left: 48vw;
+		top: 40vw;
+		font-size: 1.25vw;
+		color: lighten($backend_green, 30%);
+		width: 43.8vw;
+		padding: 1vw 1vw 1vw 1vw;
+		background-color: darken($backend_green, 42%);
+		border: 2px solid darken($backend_green, 32%);
+		cursor: pointer;
+		opacity: 0.90;
+		filter: alpha(opacity=90);
+			h3, h4{
+			color: lighten($backend_highlight, 8%);
+			font-size: 100%;
+			font-weight: 500;
+			text-decoration: underline;
+			margin: 0.25vw 0;
+			}
+			p{
+			margin: 0.25vw 0;
+			}
+			p#close_editor_help{
+			text-align: right;
+			}
+			span.highlight{
+			color: $backend_green;
+			}
+		}
+*/
+/********************************* ERRORS *************************************/
+
+		.field_with_errors input, .field_with_errors textarea{
+		border: 2px solid $error;
+		}
+		.error_message{
+		color: $error;
+		padding-bottom: 1vw;
+		}
+		#error_explanation{
+		color: #cc6600;
+		position: absolute;
+		top: 400px;
+		left: 105px;
+		}
+	}
+}

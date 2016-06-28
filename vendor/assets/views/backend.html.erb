@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<html>
+<head>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="content-script-type" content="text/javascript" />
+  <meta http-equiv="content-style-type" content="text/css" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="keywords" content="APP" />
+  <meta name="description" content="APP" />
+  <meta name="author" content="APP" />
+  <meta name="copyright" content="APP" />
+  <meta name="generator" content="rails 4.2.6" />
+  <title>APP</title>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag    "backend", :media => "all", 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "backend", 'data-turbolinks-track' => true %>
+</head>
+<body>
+	
+  <div id="page" class="<%= controller_name %>">
+	
+	<%= yield %>
+
+  </div>
+  <%= yield :javascript %>	
+
+</body>
+</html>
+
