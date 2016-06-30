@@ -1,8 +1,8 @@
-module TextileEditorHelper
+module EditorAndPreview
   module Generators
     class InstallGenerator < Rails::Generators::Base
       source_root File.expand_path('../../../../vendor', __FILE__)
-      desc 'Creates a TextileEditorHelper initializer and copies assets to app/assets'
+      desc 'Copies files to app'
       def copy_assets
         js_destination = 'app/assets/javascripts'
         css_destination = 'app/assets/stylesheets'

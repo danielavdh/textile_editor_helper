@@ -6,8 +6,8 @@ gemspec
 
 group :development do
   gem 'rails', '>= 4.1.0'
-  gem 'formtastic'
-  gem 'simple_form'
+  #gem 'formtastic'
+  #gem 'simple_form'
 end
 
 group :development, :test do

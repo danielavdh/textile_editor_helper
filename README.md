@@ -1,4 +1,4 @@
-## Textile Editor Helper
+## Textile Editor Helper  CHANGE!!
 
 [![Gem Version](https://badge.fury.io/rb/textile_editor_helper.svg)](http://badge.fury.io/rb/textile_editor_helper)
 [![Build Status](https://secure.travis-ci.org/katgironpe/textile_editor_helper.png)](http://travis-ci.org/katgironpe/textile_editor_helper)

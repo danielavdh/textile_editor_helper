@@ -14,8 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require textile-editor
+//= require textile-editor-config
 //= require_self
 
 $(function(){
 	$("#loginName").focus();
+
 });
+
+var vdh = {
+	initialize_textile_editor: function(){
+		/* <![CDATA[ */
+		$.each($('textarea.textile_editor'),function(i,el){
+			TextileEditor.initialize($(el).attr('id'));
+		});
+		/* ]]> */
+	}
+}

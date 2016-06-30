@@ -125,9 +125,18 @@ TextileEditor.Methods = {
       theButton.setAttribute('tagEnd', button.tagEnd);
       theButton.setAttribute('open', button.open);
 
-      var img = document.createElement('img');
-      img.src = '/assets/textile-editor/' + button.display;
-      theButton.appendChild(img);
+////////////////////////////// START INSERT /////////////////////////////////////////////////
+	// button images (old code) replaced with fontawesome
+/////////////////////////////// END INSERT /////////////////////////////////////////////////
+    // var img = document.createElement('img');
+    // img.src = '/assets/textile-editor/' + button.display;
+    // theButton.appendChild(img);
+////////////////////////////// START INSERT /////////////////////////////////////////////////
+	// next lines add spans for icons, instead of the image element for buttons (fontawesome)
+      	var span = document.createElement('span');
+	  	span.setAttribute('class', button.display);
+      	theButton.appendChild(span);
+/////////////////////////////// END INSERT /////////////////////////////////////////////////
     } else {
       return button;
     } // end if !custom
@@ -684,4 +693,4 @@ destination = TextileEditor
 source = TextileEditor.Methods
 for(var property in source) destination[property] = source[property];
 
-document.write('<script src="/assets/textile-editor-config.js" type="text/javascript"></script>');
+//document.write('<script src="/assets/textile-editor-config.js" type="text/javascript"></script>');
