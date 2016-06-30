@@ -1,5 +1,5 @@
 require "editor_and_preview/version"
-require 'action_view'
+#require 'action_view'
 
 #require_relative 'helpers/textile_editor_initialize'
 #require_relative 'helpers/default'

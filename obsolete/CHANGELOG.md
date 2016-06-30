@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 0.0.30
+## Version 0.0.0
 
 ### Textile Editor Helper now supports simple_form and formtastic
 
