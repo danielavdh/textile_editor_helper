@@ -1,13 +1,16 @@
 /* frontend styles, adapt for use in preview */
 $block_font: serif;
 $title_font: sans-serif;
+$color: #000000;
 $link: #ffffff;
 $hover: #999999;
 @mixin title_font{
 font-family: $title_font;
+color: $color;
 }
 @mixin block_font{
 font-family: $block_font;
+color: $color;
 }
 .block_font{
 @include block_font
@@ -215,6 +218,69 @@ background-color: $backend_bkg;
 			}
 		}
 
+/********************************* PREVIEW *************************************/
+
+		#new_edit_view{
+    		/*#selection_box_newstext, #selection_box_cardtext{
+			position: absolute;
+			right: 1vw;
+			top: 8vw;
+			z-index: 20;
+				.internal_link_field{
+				position: absolute;
+				text-align: right;
+				right: 0;
+				top: 0;
+				background-color: $bkg;
+				padding: 1vw 2vw 2vw;
+				margin: 1vw 0;
+				border: 2px solid lighten($bkg, 10%);
+				display: none;
+				}
+			}*/
+			/*#selection_box_cardtext{
+			top: 0.25vw;
+			}*/
+			#preview_title{
+			position: absolute;
+			left: 48vw;
+			top: 6.5vw;
+			width: 45vw;
+				h2{
+				color: lighten($backend_green, 30%);
+				}
+			}
+			#preview{
+			color: black;
+			position: absolute;
+			left: 48vw;
+			top: 8vw;
+			width: 40vw;
+				a{
+				color: black;
+				text-decoration: underline;
+					&:hover{
+					color: #787878;	
+					}
+				}
+				/* to change the appearance of all previews, adapt code below */
+				.preview_text{
+				position: absolute;
+				width: 40vw;
+				background-color: white;
+				padding: 1vw;
+					*{
+					@include block_font
+					}
+					h1, h2, h3, h4{
+					@include title_font
+					}
+				}
+				/* to fine-tune change: the id of every preview element is 
+				   preview_{id of corresponding textarea} */
+			}
+		}
+
 /********************************* SUPPORT *************************************/
 
 		/*#admin_communications{
@@ -281,10 +347,10 @@ background-color: $backend_bkg;
 		width: 500px;
 		padding-bottom: 70px;
 		}
-/*		div#textile_editor_help{
+		div#editor_and_preview_help{
 		position: absolute;
 		left: 48vw;
-		top: 40vw;
+		top: 12vw;
 		font-size: 1.25vw;
 		color: lighten($backend_green, 30%);
 		width: 43.8vw;
@@ -311,7 +377,7 @@ background-color: $backend_bkg;
 			color: $backend_green;
 			}
 		}
-*/
+
 /********************************* ERRORS *************************************/
 
 		.field_with_errors input, .field_with_errors textarea{

@@ -96,7 +96,39 @@ TextileEditor.Methods = {
     for(var i = 0; i < buttons.length; i++) {
       //$A(toolbar.getElementsByTagName('button')).each(function(button) {
       if (!buttons[i].onclick) {
-        buttons[i].onclick = function() { te.insertTag(this); return false; }
+        buttons[i].onclick = function(){
+////////////////////////////// START INSERT /////////////////////////////////////////////////
+		  if(this.id=="ed_help"){
+		    vdh.display_textile_editor_help();
+		  }else{
+/////////////////////////////// END INSERT /////////////////////////////////////////////////
+ 		    te.insertTag(this);
+////////////////////////////// START INSERT /////////////////////////////////////////////////
+			// get address of external links for APP
+			if(this.id=="ed_ext_link"){
+				vdh.getExternalLink(this.canvas);
+			}
+			// get email address for APP
+			if(this.id=="ed_email"){
+				vdh.getEmailAddress(this.canvas);
+			} 
+			// show select for int link for APP
+			// this is only one where getChangedText should not be called from here,
+			// but after selection has been made
+			if(this.id=="ed_int_link"){
+				vdh.getInternalLink(this.canvas);
+				//$("#internal_link_field").show("slow");
+			}else{
+				// get the changed text for preview update APP, or display help
+				// and send id of formatted textarea along (for multiple textarea formatting)
+				console.log(this.canvas)
+				console.log(this.canvas.id)
+	  			vdh.getChangedText(this.canvas);
+		    } 
+	  	  }
+/////////////////////////////// END INSERT /////////////////////////////////////////////////
+	 	    return false;
+		}
       } // end if
 
       buttons[i].tagStart = buttons[i].getAttribute('tagStart');

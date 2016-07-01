@@ -1,0 +1,18 @@
+<div id="preview_title">
+	<h2><%= t("eap.preview_title") %> </h2>
+</div>
+
+<div id="preview"
+	 class="<%= controller_name %>_preview" >
+	
+	<% for i in 0..@textareas-1 %>
+	
+	<div class="preview_text">
+		<%= @previews[i].html_safe %>
+	</div>
+	
+	<% end %>
+
+</div>
+
+

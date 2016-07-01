@@ -17,17 +17,126 @@
 //= require textile-editor-config
 //= require_self
 
-$(function(){
+var ready;
+ready = function() {
 	$("#loginName").focus();
-
-});
+	///////////////////////////////////////////////////
+	/////////////////  PREVIEW  ///////////////////////
+	///////////////////////////////////////////////////
+	// Array to hold top position of text_areas
+	vdh.textareas = [];
+	// Array to store the content of these textareas
+	vdh.previews = [];
+	// collect the text_areas from form (if any)
+	$("textarea").each(function(){
+		//vdh.textareas.push($(this).offset().top)
+		vdh.textareas.push($(this))
+	});
+	// collect the preview elements which hold the preview text
+	$(".preview_text").each(function(){
+		vdh.previews.push($(this));
+	});
+	// position the preview elements next to their text_areas
+	for(i=0; i<vdh.textareas.length; i++){
+		var id = vdh.textareas[i].attr("id");
+		vdh.previews[i].attr("id", "preview_" + id);
+		var top = (vdh.textareas[i].offset().top) - 100;
+		vdh.previews[i].css("top", top + "px");
+	}
+	// hide help
+	$("#editor_and_preview_help").css("display", "none");
+	$("#editor_and_preview_help").click(function(){
+		$(this).css("display", "none");
+		$("#preview_title").css("display", "block");
+		$("#preview").css("display", "block");
+	});
+}
+$(document).ready(ready);
+$(document).on('page:change', ready);
 
 var vdh = {
-	initialize_textile_editor: function(){
+	initialize_editor_and_preview: function(){
 		/* <![CDATA[ */
-		$.each($('textarea.textile_editor'),function(i,el){
+		$.each($('textarea.editor_and_preview'),function(i,el){
 			TextileEditor.initialize($(el).attr('id'));
 		});
 		/* ]]> */
+	},
+	///////////////////////////////////////////////////
+	/////////////////  PREVIEW  ///////////////////////
+	///////////////////////////////////////////////////
+	//textareas: null,
+	//previews: null,
+	preview: null,
+	preview_element: null,
+	textarea: null, 
+	// show help  
+	display_textile_editor_help: function(){
+		$("#editor_and_preview_help").css("display", "block");
+		$("#preview_title").css("display", "none");
+		$("#preview").css("display", "none");
+	},
+	find_preview_element: function(textarea){
+		// make the html textarea object (js) into a jquery object
+		vdh.preview_element = $(textarea);
+		vdh.preview = vdh.preview_element.val();
+	},
+	getChangedText: function(textarea){
+		vdh.find_preview_element(textarea);
+		if(vdh.preview_element.length>0){
+			$.ajax({
+  				type: "POST",
+  				url: "/admins/preview",
+  				data: { preview: vdh.preview, attribute_id: textarea.getAttribute("id") }
+			}).done(function() {
+  				//alert( "Data Saved: " );
+			});
+		}
+	},
+	ext_link_alert: "EXTERNAL_ADDRESS_HERE",
+	// this replaces "EXTERNAL_ADDRESS_HERE" with the content of the prompt in the passed textarea
+	getExternalLink: function(textarea){
+		if(vdh.lang=="de"){
+			var link=prompt("Bitte gewünschte Webadresse eingeben (am einfachsten: neues Browserfenster öffnen, zur gewünschten Seite navigieren, Adresse von Adressleiste kopieren und hier einfügen).\nExterne Adressen immer mit \"http:\/\/\" beginnen, dann öffnet die Seite in einem neuen Fenster!")
+		}else{
+			var link=prompt("Please enter address (e.g. open page in a new browser window, then copy the address from the address bar).\nThe address should start with \"http:\/\/\" to ensure the link will open in a new window!");
+		}
+		if (link!=null && link!=""){
+			preview_element = $(textarea);
+  			var str = preview_element.val().replace(vdh.ext_link_alert, link);
+			preview_element.val(str);
+		}
+	},
+	email_alert: "PLEASE_ENTER_EMAIL_ADDRESS_HERE",
+	// this replaces "PLEASE_ENTER_EMAIL_ADDRESS_HERE" with the content of the prompt in the passed textarea
+	getEmailAddress: function(textarea){
+		//vdh.find_preview_element(textarea);
+		if(vdh.lang=="de"){
+			var email=prompt("Bitte gewünschte E-mailadresse eingeben (kopieren und einfügen ist am einfachsten)")
+		}else{
+			var email=prompt("Please enter email address (copy and paste is easiest).");
+		}
+		if (email!=null && email!=""){
+			preview_element = $(textarea);
+  			var str = preview_element.val().replace(vdh.email_alert, email);
+			preview_element.val(str);
+  		}
+	},
+	link_alert: "CHOOSE_INTERNAL_LINK",
+	// choose link and then update preview (called from select box)
+	internalLinkSelected: function(sel){
+		var sel_box = $(sel).parent().parent().attr("id").split("_").pop();
+		var jq_textarea = $("textarea[id*='"+sel_box+"']");
+		var textarea = document.getElementById(jq_textarea.attr("id"));
+		var str = jq_textarea.val().replace(vdh.link_alert, sel.value);
+		jq_textarea.val(str);
+		$(sel).parent().hide("slow");
+		vdh.getChangedText(textarea);
+	},
+	// set the textarea and show the select box (called from textile-editor)
+	getInternalLink: function(textarea){
+		vdh.textarea = textarea;
+		var sel_box = textarea.getAttribute("id").split("_").pop();
+		$("#selection_box_" + sel_box + " .internal_link_field").show("slow");
 	}
 }
