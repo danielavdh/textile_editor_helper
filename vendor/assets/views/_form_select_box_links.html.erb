@@ -1,0 +1,6 @@
+<div class="selection_box_links">
+	<%= select_tag 'choose_internal_link',
+            options_for_select(frontend_pages),
+			:prompt => t("eap.choose_link"),
+			:onchange => 'vdh.internalLinkSelected(this)' %><br />
+</div>

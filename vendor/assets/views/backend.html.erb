@@ -24,6 +24,10 @@
 	
   <div id="page" class="<%= controller_name %>">
 	
+	<div id="backend_menu">
+	<%= render partial: "admins/header" unless controller_name == "sessions" %>
+	</div>
+
 	<%= yield %>
 
   </div>

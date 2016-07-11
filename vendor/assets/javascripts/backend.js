@@ -40,9 +40,13 @@ ready = function() {
 	for(i=0; i<vdh.textareas.length; i++){
 		var id = vdh.textareas[i].attr("id");
 		vdh.previews[i].attr("id", "preview_" + id);
-		var top = (vdh.textareas[i].offset().top) - 100;
+		var top = (vdh.textareas[i].offset().top) - 124;
 		vdh.previews[i].css("top", top + "px");
 	}
+	// listen to previewable textareas
+	$("textarea.editor_and_preview").keyup(function(e){
+		vdh.getChangedText($(this)[0]);
+	});
 	// hide help
 	$("#editor_and_preview_help").css("display", "none");
 	$("#editor_and_preview_help").click(function(){
@@ -125,18 +129,21 @@ var vdh = {
 	link_alert: "CHOOSE_INTERNAL_LINK",
 	// choose link and then update preview (called from select box)
 	internalLinkSelected: function(sel){
-		var sel_box = $(sel).parent().parent().attr("id").split("_").pop();
-		var jq_textarea = $("textarea[id*='"+sel_box+"']");
-		var textarea = document.getElementById(jq_textarea.attr("id"));
+		var jq_textarea = $(sel).parent().parent().siblings("textarea");
+		var textarea = jq_textarea[0];
 		var str = jq_textarea.val().replace(vdh.link_alert, sel.value);
 		jq_textarea.val(str);
 		$(sel).parent().hide("slow");
 		vdh.getChangedText(textarea);
 	},
-	// set the textarea and show the select box (called from textile-editor)
-	getInternalLink: function(textarea){
-		vdh.textarea = textarea;
-		var sel_box = textarea.getAttribute("id").split("_").pop();
-		$("#selection_box_" + sel_box + " .internal_link_field").show("slow");
+	image_alert: "CHOOSE IMAGE NOW",
+	// choose link and then update preview (called from select box)
+	imageSelected: function(sel){
+		var jq_textarea = $(sel).parent().parent().siblings("textarea");
+		var textarea = jq_textarea[0];
+		var str = jq_textarea.val().replace(vdh.image_alert, sel.value);
+		jq_textarea.val(str);
+		$(sel).parent().hide("slow");
+		vdh.getChangedText(textarea);
 	}
 }

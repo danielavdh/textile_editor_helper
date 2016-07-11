@@ -54,7 +54,10 @@ function TextileEditorButtonSeparator(sve) {
 }
 
 var TextileEditor = function() {};
-TextileEditor.buttons = new Array();
+////////////////////////////// START CHANGE /////////////////////////////////////////////////
+//TextileEditor.buttons = new Array();
+TextileEditor.i18nbuttons = new Array();
+/////////////////////////////// END CHANGE /////////////////////////////////////////////////
 TextileEditor.Methods = {
   // class methods
 
@@ -71,7 +74,10 @@ TextileEditor.Methods = {
 
     // Create the local Button array by assigning theButtons array to edButtons
     var edButtons = new Array();
-    edButtons = this.buttons;
+////////////////////////////// START CHANGE /////////////////////////////////////////////////
+    //edButtons = this.buttons;
+    edButtons = this.i18nbuttons;
+/////////////////////////////// END CHANGE /////////////////////////////////////////////////
 
     var standardButtons = new Array();
     for(var i = 0; i < edButtons.length; i++) {
@@ -112,17 +118,16 @@ TextileEditor.Methods = {
 			if(this.id=="ed_email"){
 				vdh.getEmailAddress(this.canvas);
 			} 
-			// show select for int link for APP
-			// this is only one where getChangedText should not be called from here,
+			// show select for int link and images for APP
+			// getChangedText should not be called from here,
 			// but after selection has been made
 			if(this.id=="ed_int_link"){
-				vdh.getInternalLink(this.canvas);
-				//$("#internal_link_field").show("slow");
+				$(this.canvas).siblings(".selection_box_wrapper").children(".selection_box_links").show("slow");
+			}else if(this.id=="ed_image"){
+				$(this.canvas).siblings(".selection_box_wrapper").children(".selection_box_images").show("slow");
 			}else{
 				// get the changed text for preview update APP, or display help
 				// and send id of formatted textarea along (for multiple textarea formatting)
-				console.log(this.canvas)
-				console.log(this.canvas.id)
 	  			vdh.getChangedText(this.canvas);
 		    } 
 	  	  }
