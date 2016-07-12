@@ -18,22 +18,20 @@
 //= require textile-editor-config
 //= require_self
 
-var ready;
-ready = function() {
+$(function(){
 	$("#loginName").focus();
 	///////////////////////////////////////////////////
 	/////////////////  PREVIEW  ///////////////////////
 	///////////////////////////////////////////////////
-	// Array to hold top position of text_areas
+	// collect the text_areas from form (if any) - all of them
+	// @textareas are collected in %{model}s-controller irrespective of being editable or not
+	// there is 1 div id="preview_xxx" for each textarea id="xxx"
 	vdh.textareas = [];
-	// Array to store the content of these textareas
-	vdh.previews = [];
-	// collect the text_areas from form (if any)
 	$("textarea").each(function(){
-		//vdh.textareas.push($(this).offset().top)
 		vdh.textareas.push($(this))
 	});
 	// collect the preview elements which hold the preview text
+	vdh.previews = [];
 	$(".preview_text").each(function(){
 		vdh.previews.push($(this));
 	});
@@ -43,6 +41,17 @@ ready = function() {
 		vdh.previews[i].attr("id", "preview_" + id);
 		var top = (vdh.textareas[i].offset().top) - 124;
 		vdh.previews[i].css("top", top + "px");
+	}
+	// hide all preview elements except first one, 
+	// any text_area getting focus then shows its preview (and hide others)
+	if(vdh.previews.length>0){
+		$(".preview_text").hide();
+		vdh.previews[0].show();
+		$(".editor_and_preview").focus(function(e){
+			$(".preview_text").hide();
+			var id = $(this).attr("id");
+			$("#preview_"+id).show();
+		});
 	}
 	// listen to previewable textareas
 	$("textarea.editor_and_preview").keyup(function(e){
@@ -55,9 +64,24 @@ ready = function() {
 		$("#preview_title").css("display", "block");
 		$("#preview").css("display", "block");
 	});
-}
-$(document).ready(ready);
-$(document).on('page:change', ready);
+	///////////////////////////////////////////////////
+	/////////////////  ONLOAD  ////////////////////////
+	///////////////////////////////////////////////////
+	$(window).on("load", function(){
+		// make sure page height can accommodate previews
+		$(".preview_text").each(function(){
+			console.log($(this).css("height"));
+			vdh.previewTotalHeight += parseInt($(this).css("height"));
+		});
+		$(".editor_and_preview").each(function(){
+			console.log($(this).css("height"));
+			vdh.textareaTotalHeight += (parseInt($(this).css("height"))+110);
+		});
+		if(vdh.previewTotalHeight>vdh.textareaTotalHeight){
+			$("#page").css("height", parseInt($("#page").css("height"))+(vdh.previewTotalHeight-vdh.textareaTotalHeight)+"px");
+		}
+	});
+});
 
 var vdh = {
 	initialize_editor_and_preview: function(){
@@ -75,6 +99,8 @@ var vdh = {
 	preview: null,
 	preview_element: null,
 	textarea: null, 
+	previewTotalHeight: 0,
+	textareaTotalHeight: 0, 
 	// show help  
 	display_textile_editor_help: function(){
 		$("#editor_and_preview_help").css("display", "block");
