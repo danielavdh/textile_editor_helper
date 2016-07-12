@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require textile-editor
 //= require textile-editor-config
 //= require_self
@@ -39,7 +38,7 @@ $(function(){
 	for(i=0; i<vdh.textareas.length; i++){
 		var id = vdh.textareas[i].attr("id");
 		vdh.previews[i].attr("id", "preview_" + id);
-		var top = (vdh.textareas[i].offset().top) - 124;
+		var top = (vdh.textareas[i].offset().top) - 170;
 		vdh.previews[i].css("top", top + "px");
 	}
 	// hide all preview elements except first one, 
