@@ -1,6 +1,7 @@
 en:
   eap:
     preview_title: "Preview (do remember to save your changes)"
+    finetune_css: "To fine tune the formatting of the preview, adapt backend.scss preview section"
     close_window: "Close help"
     format_text_title: "To format text"
     format_text: "Select text, then click the matching formatting button."

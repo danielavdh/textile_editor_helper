@@ -1,6 +1,7 @@
 de:
   eap:
     preview_title: "Vorschau (Ans Speichern denken!)"
+    finetune_css: "Für die exakt benötigte Formatierung der Vorschau, bitte backend.scss Sektion 'preview' anpassen."
     close_window: "Fenster schliessen"
     format_text_title: "Text formatieren"
     format_text: "Text auswählen, dann gewünschten Formatierungsknopf klicken."

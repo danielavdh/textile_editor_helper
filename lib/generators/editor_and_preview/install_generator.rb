@@ -27,6 +27,8 @@ module EditorAndPreview
         ### other ###
         copy_file 'assets/config/backend.rb', "#{config_destination}/initializers/backend.rb"
         copy_file 'assets/config/backend_helper.rb', "app/helpers/backend_helper.rb"
+        copy_file 'assets/config/text_corrections.rb', "app/controllers/concerns/text_corrections.rb"
+        copy_file 'assets/config/dog.rb', "app/models/concerns/dog.rb"  #colorize gem
         copy_file 'assets/config/en.yml', "#{config_destination}/locales_eap/en.yml"
         copy_file 'assets/config/de.yml', "#{config_destination}/locales_eap/de.yml"
         #directory 'assets/images/textile-editor', 'app/assets/images/textile-editor'
