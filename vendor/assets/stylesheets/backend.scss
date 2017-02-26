@@ -312,6 +312,61 @@ background-color: $backend_bkg;
 			}
 		}
 
+/********************************* LOGIN *************************************/
+
+		#newWebsite{
+		margin: 160px 5px 100px 100px;
+		text-align: left;
+			p{
+			font-size: 24pt;
+			line-height: 30pt;
+			}
+			a{
+			color: $backend_link;
+				&:hover{
+				color: darken($backend_hover, 30%);
+				}
+			}
+		}
+		.login_form{
+			#invalidAlert{
+			padding-top: 0px;
+			padding-left: 133px;
+			color: $backend_highlight;
+			text-align: left;
+			}
+			fieldset{
+			margin: 20px 5px 5px 100px;
+			width: 500px;
+			padding: 20px 20px 10px;
+			border: 3px solid #666666;
+			text-align: left;
+				p{
+				margin-top: 5px;
+				}
+			}
+			legend{
+			padding: 5px;
+			font-size: 16pt;
+			color: #787878;
+			}
+			label{
+			padding-left: 5px;
+			color: #bbbbbb;
+			}
+			input[type="text"], input[type="password"]{
+			background-color: #989898;
+			border: 2px inset #bbbbbb;
+			}
+			input[type="submit"]{
+			background-color: #989898;
+			-moz-border-radius: 8px 8px 8px 8px / 8px 8px 8px 8px; /* Firefox */
+			border-radius: 8px 8px;
+			padding: 2px 20px 5px;
+			margin: 0px 0px 30px;
+			}
+		}
+
 /********************************* SUPPORT *************************************/
 
 		/*#admin_communications{
