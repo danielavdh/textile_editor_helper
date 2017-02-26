@@ -35,3 +35,36 @@ en:
     title_img: "Insert cursor at location where image needs to be displayed, then click here"
     title_more: "The text after (more) will initially be hidden on frontend pages (in preview always visible though!)"
     title_info: "More information: Click here."
+  admins:
+    index:
+      list_h1: "Listing Admins"
+      new: "New Admin"
+      show: "Show"
+      edit: "Edit"
+      sure: "Are you sure?"
+      destroy: "Destroy"
+    show:
+      name: "Name"
+      last_seen: "Your last login"
+    new:
+      new_h1: "New Admin"
+      index: "Back to Admin List"
+      errors_on_page: "There are errors on this page (scroll down)"
+    edit:
+      edit_h1: "Edit Admin"
+      index: "Back to Admin List"
+      errors_on_page: "There are errors on this page (scroll down)"
+      show: "Show Admin"
+    form:
+      name: "name"
+      password: "pls choose a password"
+      password_confirmation: "pls confirm password"
+      submit: "Save Admin"
+  sessions:
+    new:
+      enter_details: "Please enter your login details"
+      name: "Name"
+      password: "Password"
+      login: "Log In"
+      back: "back"
+      newWebsite: "We are building a new website"

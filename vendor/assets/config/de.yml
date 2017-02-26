@@ -35,3 +35,36 @@ de:
     title_img: "Cursor einfügen, wo Bild hinkommt, dann Bild klicken"
     title_more: "Der Text nach mehr ist auf der Seite vorerst unsichtbar (in der Vorschau nebenan bleibt er aber sichtbar!)"
     title_info: "Mehr Information: Hier klicken"
+  admins:
+    index:
+      list_h1: "Admin"
+      new: "Neue Admin"
+      show: "Zeigen"
+      edit: "Anpassen"
+      sure: "Bist Du sicher?"
+      destroy: "Vernichten"
+    show:
+      name: "Name"
+      last_seen: "Zuletzt eingeloggt"
+    new:
+      new_h1: "Neue Admin"
+      index: "Zurück zu Admins-Übersicht"
+      errors_on_page: "Auf dieser Seite hat es Fehler"
+    edit:
+      edit_h1: "Admin anpassen"
+      index: "Zurück zu Admins-Übersicht"
+      errors_on_page: "Auf dieser Seite hat es Fehler"
+      show: "Admin zeigen"
+    form:
+      name: "Name"
+      password: "Passwort"
+      password_confirmation: "Passwort bestätigen"
+      submit: "Admin speichern"
+  sessions:
+    new:
+      enter_details: "Bitte Logindetails eingeben"
+      name: "Name"
+      password: "Passwort"
+      login: "Log In"
+      back: "zurück"
+      newWebsite: "Hier entstehen neue Webseiten für Anwaltsbüro Hauser"
