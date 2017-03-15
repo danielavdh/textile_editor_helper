@@ -101,4 +101,4 @@ de:
       submit: "Eintrag speichern"
       doc: "Dokument"
       exchange: "kann hier ausgewechselt werden."
-      choose_doc: "Bitte Bilddokument wählen. Leer lassen, wenn unnötig. (nur .jpg und .jpeg erlaubt)"
+      choose_doc: "Bitte Bilddokument wählen. (nur .jpg und .jpeg erlaubt)"
