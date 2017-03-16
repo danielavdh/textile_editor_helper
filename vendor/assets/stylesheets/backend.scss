@@ -1,3 +1,6 @@
+//@import "font-awesome-sprockets";
+//@import "font-awesome";
+
 /* frontend styles, adapt for use in preview */
 $block_font: serif;
 $title_font: sans-serif;
@@ -47,13 +50,14 @@ color: #cc0000;
 h1{
 color: lighten($backend_green, 30%);
 text-align: left;
-margin: 25px 0px;
+margin: 2.5vw 0;
 }
 
 body {
 position: relative;
 font-size: 1.5vw;
 color: $backend_text;
+padding-top: 5vw;
 background-color: $backend_bkg;
 	#page{
 	text-align: left;
@@ -69,23 +73,22 @@ background-color: $backend_bkg;
 /************************************************************************************/
 		#backend_menu{
 		position: fixed;
-		top: 0px;
-		width: 100%;
+		top: 0;
+		width: 100vw;
 		text-align: center;
 		z-index: 100;
 			ul{
 			background-color: darken($backend_bkg, 8%);
-			margin: 0px -20px 4px -20px;
-			padding: 3px 0px;
+			margin-bottom: 0.25vw;
 				li{
 				display: inline;
-				padding: 10px;
-				}
-				a{
-				color: $link;
-				padding: 1px 15px;
-					&:hover{
-					text-decoration: underline;
+					a{
+					color: $link;
+					padding: 0.2vw 2vw;
+					display: inline-block;
+						&:hover{
+						text-decoration: underline;
+						}
 					}
 				}
 			}
@@ -102,11 +105,11 @@ background-color: $backend_bkg;
 /**************************** INDEX *** INDEX *** INDEX ****************************/
 /***********************************************************************************/
 		.backend_table{
-		width: 98vw;
-		padding: 8vw 0 4vw 1vw;
+		width: 99vw;
+		padding: 0 0 4vw 1vw;
 			table{
 			width: 100%;
-			margin: 2% 0%;
+			margin: 2vw 0;
 			}
 			th{
 			background-color: lighten($backend_bkg, 7.5%);
@@ -125,37 +128,17 @@ background-color: $backend_bkg;
 			tr.list-line-even{
 			background-color: lighten($backend_bkg, 7.5%);
 			}
-		}
 /************************************************************************************/
 /****************************** SHOW *** SHOW *** SHOW ******************************/
 /************************************************************************************/
-		.backend_show{
-			td, th{
-			color: darken($backend_text, 15%);
-			}
-			th.firstCell, td.firstCell{
-			width: 30%;
-			color: $backend_text;
-			}
-		}
-/************************************************************************************/
-/********************* NAVIGATION *** NAVIGATION *** NAVIGATION *********************/
-/************************************************************************************/
-		.crud_navigation{
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		width: 100vw;
-		height: 4vw;
-		color: $backend_link;
-		padding: 1vw 2vw 3vw;
-		border-top: 2px solid lighten($backend_bkg, 10%);
-		background-color: darken($backend_bkg, 8%);
-			a{
-			margin: 0 0.5vw;
-			color: $backend_link;
-				&:hover{
-				color: $backend_hover;
+			table.backend_show{
+			padding-top: 2vw;
+				td, th{
+				color: darken($backend_text, 15%);
+				}
+				th.firstCell, td.firstCell{
+				width: 30%;
+				color: $backend_text;
 				}
 			}
 		}
@@ -163,7 +146,7 @@ background-color: $backend_bkg;
 /********************* EDIT & NEW *** EDIT & NEW *** EDIT & NEW *********************/
 /************************************************************************************/
 		#new_edit_view{
-		padding: 4vw 0 4vw 1vw;
+		padding: 0 0 4vw 1vw;
 		margin-bottom: 6vw;
 /***************************** FORMS *** FORMS *** FORMS *****************************/
 /**************************** .new_{model}, .edit_{model} ****************************/
@@ -179,7 +162,7 @@ background-color: $backend_bkg;
 				padding: 1vw 0.5vw 2vw;
 				margin: 1vw 0;
 				background-color: lighten($backend_bkg, 7%);
-				border: 2px solid lighten($backend_bkg, 10%);
+				border: 0.2vw solid lighten($backend_bkg, 10%);
 					input, select{
 					margin-top: 0.3vw;
 					}
@@ -238,7 +221,7 @@ background-color: $backend_bkg;
 					background-color: $backend_bkg;
 					padding: 1vw 2vw 2vw;
 					margin: 1vw 0;
-					border: 2px solid lighten($backend_bkg, 10%);
+					border: 0.2vw solid lighten($backend_bkg, 10%);
 					display: none;
 					}
 				}
@@ -250,7 +233,7 @@ background-color: $backend_bkg;
 				height: 4vw;
 				padding: 0.5vw 2vw 3.5vw;
 				background-color: darken($backend_bkg, 8%);
-				border-top: 2px solid lighten($backend_bkg, 10%);
+				border-top: 0.2vw solid lighten($backend_bkg, 10%);
 				z-index: 200;
 					input[type="submit"]{
 					font-size: 90%;
@@ -270,7 +253,7 @@ background-color: $backend_bkg;
 			#preview_title{
 			position: absolute;
 			left: 48vw;
-			top: 6.5vw;
+			top: 8vw;
 			width: 45vw;
 				h2{
 				color: lighten($backend_green, 30%);
@@ -306,6 +289,27 @@ background-color: $backend_bkg;
 				   preview_{id of corresponding textarea} */
 			}
 		}
+/************************************************************************************/
+/********************* NAVIGATION *** NAVIGATION *** NAVIGATION *********************/
+/************************************************************************************/
+		.crud_navigation{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 4vw;
+		color: $backend_link;
+		padding: 1vw 2vw 3vw;
+		border-top: 2px solid lighten($backend_bkg, 10%);
+		background-color: darken($backend_bkg, 8%);
+			a{
+			margin: 0 0.5vw;
+			color: $backend_link;
+				&:hover{
+				color: $backend_hover;
+				}
+			}
+		}
 /***********************************************************************************/
 /**************************** LOGIN *** LOGIN *** LOGIN ****************************/
 /***********************************************************************************/
@@ -336,29 +340,41 @@ background-color: $backend_bkg;
 			padding: 20px 20px 10px;
 			border: 3px solid #666666;
 			text-align: left;
+				legend{
+				padding: 5px;
+				font-size: 16pt;
+				color: #787878;
+				}
 				p{
 				margin-top: 5px;
+					label{
+					padding-left: 5px;
+					color: #bbbbbb;
+					}
+					input[type="text"], input[type="password"]{
+					width: 250px;
+					background-color: #989898;
+					border: 2px inset #bbbbbb;
+					}
 				}
-			}
-			legend{
-			padding: 5px;
-			font-size: 16pt;
-			color: #787878;
-			}
-			label{
-			padding-left: 5px;
-			color: #bbbbbb;
-			}
-			input[type="text"], input[type="password"]{
-			background-color: #989898;
-			border: 2px inset #bbbbbb;
-			}
-			input[type="submit"]{
-			background-color: #989898;
-			-moz-border-radius: 8px 8px 8px 8px / 8px 8px 8px 8px; /* Firefox */
-			border-radius: 8px 8px;
-			padding: 2px 20px 5px;
-			margin: 0px 0px 30px;
+				p:last-child{
+				padding-top: 20px; 
+				padding-left: 1px;
+					input[type="submit"]{
+					background-color: #989898;
+					-moz-border-radius: 8px 8px 8px 8px / 8px 8px 8px 8px; /* Firefox */
+					border-radius: 8px 8px;
+					padding: 5px 20px 5px;
+					margin: 0px 0px 30px;
+					cursor: pointer;
+						&:hover{
+						background-color: lighten(#989898, 15%);
+						}
+					}
+					span{
+					padding-left: 125px;
+					}
+				}
 			}
 		}
 /***********************************************************************************/
