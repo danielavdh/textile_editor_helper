@@ -64,9 +64,9 @@ background-color: $backend_bkg;
 			color: $backend_hover;
 			}
 		}
-
-/********************************* MENU *************************************/
-
+/************************************************************************************/
+/****************************** MENU *** MENU *** MENU ******************************/
+/************************************************************************************/
 		#backend_menu{
 		position: fixed;
 		top: 0px;
@@ -98,16 +98,76 @@ background-color: $backend_bkg;
 				}
 			}
 		}
-
-/********************************* EDIT/NEW *************************************/
-
+/***********************************************************************************/
+/**************************** INDEX *** INDEX *** INDEX ****************************/
+/***********************************************************************************/
+		.backend_table{
+		width: 98vw;
+		padding: 8vw 0 4vw 1vw;
+			table{
+			width: 100%;
+			margin: 2% 0%;
+			}
+			th{
+			background-color: lighten($backend_bkg, 7.5%);
+			}
+			td, th{
+			text-align: left;
+			font-size: 85%;
+			padding: 1vh 1vw;
+			}
+			th.sed, td.sed{
+			width: 1vw;
+			}
+			tr.list-line-odd{	
+			background-color: lighten($backend_bkg, 15%);
+			}
+			tr.list-line-even{
+			background-color: lighten($backend_bkg, 7.5%);
+			}
+		}
+/************************************************************************************/
+/****************************** SHOW *** SHOW *** SHOW ******************************/
+/************************************************************************************/
+		.backend_show{
+			td, th{
+			color: darken($backend_text, 15%);
+			}
+			th.firstCell, td.firstCell{
+			width: 30%;
+			color: $backend_text;
+			}
+		}
+/************************************************************************************/
+/********************* NAVIGATION *** NAVIGATION *** NAVIGATION *********************/
+/************************************************************************************/
+		.crud_navigation{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100vw;
+		height: 4vw;
+		color: $backend_link;
+		padding: 1vw 2vw 3vw;
+		border-top: 2px solid lighten($backend_bkg, 10%);
+		background-color: darken($backend_bkg, 8%);
+			a{
+			margin: 0 0.5vw;
+			color: $backend_link;
+				&:hover{
+				color: $backend_hover;
+				}
+			}
+		}
+/************************************************************************************/
+/********************* EDIT & NEW *** EDIT & NEW *** EDIT & NEW *********************/
+/************************************************************************************/
 		#new_edit_view{
 		padding: 4vw 0 4vw 1vw;
 		margin-bottom: 6vw;
-
-/********************************* FORMS ***************************************/
-/********************** .new_{model}, .edit_{model} ****************************/
-
+/***************************** FORMS *** FORMS *** FORMS *****************************/
+/**************************** .new_{model}, .edit_{model} ****************************/
+/***************************** FORMS *** FORMS *** FORMS *****************************/
 			.new_admin, .edit_admin{
 			width: 40vw;
 				.field, .actions{
@@ -204,74 +264,9 @@ background-color: $backend_bkg;
 					}
 				}
 			}
-		}
-
-/********************************* INDEX *************************************/
-/********************************* .{model}_table *************************************/
-
-		.backend_table{
-		width: 98vw;
-		padding: 8vw 0 4vw 1vw;
-			table{
-			width: 100%;
-			margin: 2% 0%;
-			}
-			th{
-			background-color: lighten($backend_bkg, 7.5%);
-			}
-			td, th{
-			text-align: left;
-			font-size: 85%;
-			padding: 1vh 1vw;
-			}
-			th.sed, td.sed{
-			width: 1vw;
-			}
-			tr.list-line-odd{	
-			background-color: lighten($backend_bkg, 15%);
-			}
-			tr.list-line-even{
-			background-color: lighten($backend_bkg, 7.5%);
-			}
-		}
-
-/********************************* SHOW *************************************/
-/**************************** .show_{model} **********************************/
-
-		.backend_show{
-			td, th{
-			color: darken($backend_text, 15%);
-			}
-			th.firstCell, td.firstCell{
-			width: 30%;
-			color: $backend_text;
-			}
-		}
-
-/********************************* NAVIGATION *************************************/
-
-		.crud_navigation{
-		position: fixed;
-		left: 0;
-		bottom: 0;
-		width: 100vw;
-		height: 4vw;
-		color: $backend_link;
-		padding: 1vw 2vw 3vw;
-		border-top: 2px solid lighten($backend_bkg, 10%);
-		background-color: darken($backend_bkg, 8%);
-			a{
-			margin: 0 0.5vw;
-			color: $backend_link;
-				&:hover{
-				color: $backend_hover;
-				}
-			}
-		}
-
-/********************************* PREVIEW *************************************/
-
-		#new_edit_view{
+/************************* PREVIEW *** PREVIEW *** PREVIEW *************************/
+/***********************************************************************************/
+/************************* PREVIEW *** PREVIEW *** PREVIEW *************************/
 			#preview_title{
 			position: absolute;
 			left: 48vw;
@@ -311,9 +306,9 @@ background-color: $backend_bkg;
 				   preview_{id of corresponding textarea} */
 			}
 		}
-
-/********************************* LOGIN *************************************/
-
+/***********************************************************************************/
+/**************************** LOGIN *** LOGIN *** LOGIN ****************************/
+/***********************************************************************************/
 		#newWebsite{
 		margin: 160px 5px 100px 100px;
 		text-align: left;
@@ -366,9 +361,9 @@ background-color: $backend_bkg;
 			margin: 0px 0px 30px;
 			}
 		}
-
-/********************************* SUPPORT *************************************/
-
+/***********************************************************************************/
+/************************* SUPPORT *** SUPPORT *** SUPPORT *************************/
+/***********************************************************************************/
 		/*#admin_communications{
 		padding-top: 5vh;
 			li{
@@ -463,9 +458,9 @@ background-color: $backend_bkg;
 			color: $backend_green;
 			}
 		}
-
-/********************************* ERRORS *************************************/
-
+/***********************************************************************************/
+/************************* ERRORS *** ERRORS *** ERRORS *************************/
+/***********************************************************************************/
 		.field_with_errors input, .field_with_errors textarea{
 		border: 2px solid $error;
 		}
