@@ -16,7 +16,7 @@ en:
     email_links: "For links and email you cannot use the method above to undo formatting! If something goes wrong, either manually edit the text or reload the page (without saving - this means though that you lose other unsaved changes as well!)"
     ext_links_title: "Links to external web pages"
     ext_links: "Select the text that the visitor is meant to click - the visible part of the link.<br />Click <span class='highlight fa fa-external-link'></span> (opens a window prompt).<br />Enter address of page that should open when link is clicked. The easiest way to do this, is to open a new browser window, navigate to the page you want to link to, copy the address from the address bar and paste it into the prompt.<br />Important: External addresses should always start with <span class='highlight'>http://</span> <br />This is correct, and also the clue to the programme that this link should open in a new tab or window, so the visitor does not lose the page when clicking an external link."
-    int_links_title: "Links to an other page within Laura's website"
+    int_links_title: "Links to an other page within your website"
     int_links: "Select the text which a visitor should see as link text.<br />Click <span class='highlight fa fa-link'></span>.<br />A select box with all the pages will appear. Select the one you wish to link to."
     emails_title: "Email Addresses"
     emails: "Select the text which should be the visible email text.<br />Click <span class='highlight fa fa-at'></span>. This opens a window prompt.<br />Enter address (copy and paste..)."

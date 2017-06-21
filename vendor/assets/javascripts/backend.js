@@ -69,11 +69,9 @@ $(function(){
 	$(window).on("load", function(){
 		// make sure page height can accommodate previews
 		$(".preview_text").each(function(){
-			console.log($(this).css("height"));
 			vdh.previewTotalHeight += parseInt($(this).css("height"));
 		});
 		$(".editor_and_preview").each(function(){
-			console.log($(this).css("height"));
 			vdh.textareaTotalHeight += (parseInt($(this).css("height"))+110);
 		});
 		if(vdh.previewTotalHeight>vdh.textareaTotalHeight){
