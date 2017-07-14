@@ -68,3 +68,37 @@ en:
       login: "Log In"
       back: "back"
       newWebsite: "We are building a new website"
+  documents:
+    index:
+      list_h1: "Documents"
+      new: "New Document"
+      show: "show"
+      edit: "edit"
+      sure: "Are you sure?"
+      destroy: "destroy"
+      image_file_name: "File Name"
+      image_content_type: "Content Type"
+      image_file_size: "File Size"
+      image_updated_at: "Updated At"
+    show:
+      image_file_name: "File Name"
+      image_content_type: "Content Type"
+      image_file_size: "File Size"
+      image_updated_at: "Updated At"
+      edit: "Edit Document"
+      back: "Back to documents overview"
+    new:
+      new_h1: "New Document"
+      index: "Back to Document Overview"
+      errors_on_page: "There are errors on this page."
+    edit:
+      edit_h1: "Edit Document"
+      index: "Back to Documents Overview"
+      errors_on_page: "There are errors on this page."
+      show: "Show"
+    form:
+      image: "Image"
+      submit: "save"
+      doc: "Document"
+      exchange: " can be exchanged here."
+      choose_doc: "Please choose a document. (only .jpg and .jpeg)"
