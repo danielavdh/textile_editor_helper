@@ -29,6 +29,8 @@ en:
     title_underline: "Select text, then click for underline"
     title_sup: "Select text, then click here for sup"
     title_sub: "Select text, then click here for sub"
+    title_ul: "Select text, then click here for unordered list"
+    title_ol: "Select text, then click here for ordered list"
     title_intLink: "Select link text (visible part of link), then click here for internal link"
     title_extLink: "Select link text (visible part of link), then click here for external link"
     title_email: "Select text (visible part of email), then click here for email address"

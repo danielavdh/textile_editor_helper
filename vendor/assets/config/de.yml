@@ -29,6 +29,8 @@ de:
     title_underline: "Text wählen, dann Unterstreichen klicken"
     title_sup: "Text wählen, dann Hochstellen klicken"
     title_sub: "Text wählen, dann Tiefstellen klicken"
+    title_ul: "Text wählen, dann Punktliste klicken"
+    title_ol: "Text wählen, dann nummerierte Liste klicken"
     title_intLink: "Linktext (was der Leser sieht) wählen, dann hier (interner Link) klicken"
     title_extLink: "Linktext (was der Leser sieht) wählen, dann hier (externer Link) klicken"
     title_email: "Emailtext (was der Leser sieht) wählen, dann hier (Email) klicken"
